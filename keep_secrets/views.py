@@ -19,7 +19,7 @@ class SecretCreateView(CreateAPIView):
 
 
 class SecretGetView(APIView):
-    def get(self, request, code):
+    def get(self, request, code: str):
         try:
             my_object = Secret.objects.get(code=code)
             my_object.delete()

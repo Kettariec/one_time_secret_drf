@@ -8,15 +8,15 @@ class EncryptedTextField(models.TextField):
         super().__init__(*args, **kwargs)
         self.cipher_suite = Fernet(Fernet.generate_key())
 
-    def to_python(self, value):
+    def to_python(self, value: str):
         if not value:
             return value
         return self.cipher_suite.decrypt(value.encode()).decode()
 
-    def from_db_value(self, value, expression, connection):
+    def from_db_value(self, value: str, expression, connection):
         return self.to_python(value)
 
-    def get_prep_value(self, value):
+    def get_prep_value(self, value: str):
         if not value:
             return value
         return self.cipher_suite.encrypt(value.encode()).decode()
