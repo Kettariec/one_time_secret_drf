@@ -2,8 +2,9 @@ from django.db import models
 from cryptography.fernet import Fernet
 
 
-"""Кастомное шифрующее текст с помощью библиотеки cryptography"""
 class EncryptedTextField(models.TextField):
+    """Кастомное поле шифрующее текст
+     с помощью библиотеки cryptography"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.cipher_suite = Fernet(Fernet.generate_key())
