@@ -1,40 +1,40 @@
-<h2 align="center">Сервис одноразовых записок</h2>
+<h2 align="center">One-time note service</h2>
 
-Cервис одноразовых секретных записок наподобие onetimesecret.com
+Service of one-time secret notes like a onetimesecret.com
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Перед запуском web-приложения создайте базу данных, создайте и примените миграции, установите необходимые пакеты из файла requirements.txt и заполните файл .env по образцу .env.example. Для запуска используйте команду "python manage.py runserver" либо через конфигурационные настройки PyCharm.
+Before running the web application, create a database, create and apply migrations, install the necessary packages from the requirements.txt file and populate the .env file with .env.example. To run, use the command "python manage.py runserver".
 
 
 ### Docker 
-Создать образы и контейнеры DOCKER с помощью команд: "docker-compose build" и "docker-compose up".
+Create Docker images and containers using commands: "docker-compose build" and "docker-compose up".
 
 
-## Структура проекта
+## Project structure
 
 config/
 
-    settings.py - настройки приложений
-    urls.py - файл маршрутизации
+    settings.py - application settings
+    urls.py - routing file
 
 keep_secrets/
 
     migrations/
-        папка с миграциями
-    admin.py - настройки админки
-    models.py - модели приложения
-    serializers.py - сериализаторsы
-    services.py - сервисные функции
-    tests.py - тесты
-    urls.py - файл маршрутизации приложения
-    views.py - контроллеры
+        directory with migrations
+    admin.py - admin settings
+    models.py - application models
+    serializers.py - application serializers
+    services.py - service functions
+    tests.py - application tests
+    urls.py - application routing file
+    views.py - controllers
 
-manage.py - точка входа веб-приложения
+manage.py - web application entry point.
 
-requirements.txt - список зависимостей для проекта.
+requirements.txt - list of requirements for the project.
 
 <!-- LICENSE -->
 ## License
