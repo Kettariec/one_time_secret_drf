@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'keep_secrets',
-    'django_celery_beat'
+    'django_celery_beat',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
