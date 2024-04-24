@@ -1,5 +1,6 @@
 from django.db import models
 from cryptography.fernet import Fernet
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class EncryptedTextField(models.TextField):
@@ -26,6 +27,11 @@ class EncryptedTextField(models.TextField):
 class Secret(models.Model):
     text = EncryptedTextField()
     code = models.CharField(max_length=10, blank=True)
+    time = models.DateTimeField(auto_now_add=True)
+    days = models.PositiveIntegerField(default=7,
+                                       validators=[MinValueValidator(1),
+                                                   MaxValueValidator(7)],
+                                       verbose_name='время жизни секрета(в днях)')
 
     class Meta:
         verbose_name = 'секрет'

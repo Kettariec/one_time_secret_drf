@@ -6,6 +6,7 @@ from keep_secrets.services import generate_code
 from rest_framework.response import Response
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
+from datetime import timedelta
 
 
 class SecretCreateView(CreateAPIView):
@@ -15,6 +16,8 @@ class SecretCreateView(CreateAPIView):
     def perform_create(self, serializer):
         new_secret = serializer.save()
         new_secret.code = generate_code()
+        days = timedelta(days=new_secret.days)
+        new_secret.time = new_secret.time + days
         new_secret.save()
 
 
