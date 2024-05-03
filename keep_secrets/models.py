@@ -4,8 +4,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class EncryptedTextField(models.TextField):
-    """Кастомное поле шифрующее текст
-     с помощью библиотеки cryptography"""
+    """Custom field that encrypts text
+     using the cryptography library"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.cipher_suite = Fernet(Fernet.generate_key())
@@ -31,8 +31,8 @@ class Secret(models.Model):
     days = models.PositiveIntegerField(default=7,
                                        validators=[MinValueValidator(1),
                                                    MaxValueValidator(7)],
-                                       verbose_name='время жизни секрета(в днях)')
+                                       verbose_name='secret lifetime (in days)')
 
     class Meta:
-        verbose_name = 'секрет'
-        verbose_name_plural = 'секреты'
+        verbose_name = 'secret'
+        verbose_name_plural = 'secrets'

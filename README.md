@@ -1,6 +1,7 @@
 <h2 align="center">One-time note service</h2>
 
-Service of one-time secret notes like a onetimesecret.com
+#### Service of one-time secret notes like a onetimesecret.com
+#### Write a secret, determine the lifetime of the secret and receive a one-time key. When the secret's lifetime expires or is read, the secret is deleted. All secrets are stored in encrypted form and no one has access to them!
 
 
 <!-- USAGE EXAMPLES -->
@@ -9,7 +10,7 @@ Service of one-time secret notes like a onetimesecret.com
 Before running the web application, create a database, create and apply migrations, install the necessary packages from the requirements.txt file and populate the .env file with .env.example. To run, use the command "python manage.py runserver".
 
 
-### Docker 
+## Docker 
 Create Docker images and containers using commands: "docker-compose build" and "docker-compose up".
 
 

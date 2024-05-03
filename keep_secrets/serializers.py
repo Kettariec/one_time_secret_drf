@@ -6,4 +6,4 @@ class SecretSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Secret
-        fields = '__all__'
+        fields = ['text', 'code', 'time', 'days']

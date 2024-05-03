@@ -4,8 +4,7 @@ from keep_secrets.models import Secret
 from keep_secrets.serializers import SecretSerializer
 from keep_secrets.services import generate_code
 from rest_framework.response import Response
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import status
+from django.shortcuts import get_object_or_404
 from datetime import timedelta
 
 
@@ -22,11 +21,10 @@ class SecretCreateView(CreateAPIView):
 
 
 class SecretGetView(APIView):
+    queryset = Secret.objects.all()
+    serializer_class = SecretSerializer
+
     def get(self, request, code: str):
-        try:
-            my_object = Secret.objects.get(code=code)
-            my_object.delete()
-            return Response({'Секрет': my_object.text})
-        except ObjectDoesNotExist:
-            return Response({'Ошибка': 'Секрет с указанным кодом не найден'},
-                            status=status.HTTP_404_NOT_FOUND)
+        my_object = get_object_or_404(Secret, code=code)
+        my_object.delete()
+        return Response({'Secret': my_object.text})

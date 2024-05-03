@@ -7,6 +7,8 @@ from django.conf import settings
 
 @shared_task
 def check_secrets():
+    """Periodically checks the secret lifetime
+    and deletes secrets whose time has expired"""
     zone = pytz.timezone(settings.TIME_ZONE)
     now = datetime.now(zone)
 

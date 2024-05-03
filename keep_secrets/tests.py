@@ -34,22 +34,6 @@ class SecretTestCase(APITestCase):
         self.assertEqual(
             response.json(),
             {
-                "Ошибка": "Секрет с указанным кодом не найден"
+                "Error": "The secret with the code was not found"
             }
         )
-
-    # def test_get_secret(self):
-    #     response = self.client.get(
-    #         f'http://127.0.0.1:8000/keep_secrets/check/{self.secret.code}',
-    #     )
-    #
-    #     self.assertEqual(
-    #         response.status_code,
-    #         status.HTTP_200_OK
-    #     )
-    #     self.assertEqual(
-    #         response.json(),
-    #         {
-    #             "Секрет": "test text"
-    #         }
-    #     )
