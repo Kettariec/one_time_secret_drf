@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.getenv('POSTGRES_HOST')]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'keep_secrets',
     'django_celery_beat',
-    'drf_yasg'
+    'drf_yasg',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -149,3 +151,14 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': timedelta(minutes=1),
     },
 }
+
+
+CORS_ALLOWED_ORIGINS = [
+    '<http://127.0.0.1:8000>',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1",
+]
+
+CORS_ALLOW_ALL_ORIGINS = False
