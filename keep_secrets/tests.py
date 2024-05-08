@@ -11,6 +11,7 @@ class SecretTestCase(APITestCase):
     def test_create_secret(self):
         data = {
             "text": 'test text',
+            "days": 3
         }
         response = self.client.post(
             'http://127.0.0.1:8000/keep_secrets/create/',
@@ -34,6 +35,6 @@ class SecretTestCase(APITestCase):
         self.assertEqual(
             response.json(),
             {
-                "Error": "The secret with the code was not found"
+                'detail': 'No Secret matches the given query.'
             }
         )
