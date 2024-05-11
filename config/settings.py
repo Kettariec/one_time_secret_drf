@@ -141,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Settings for Celery
 CELERY_BROKER_URL = os.getenv('REDIS')
 CELERY_RESULT_BACKEND = os.getenv('REDIS')
-CELERY_TIMEZONE = "os.getenv('TIME_ZONE')"
+CELERY_TIMEZONE = os.getenv('TIME_ZONE')
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
