@@ -7,7 +7,7 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Before running the web application, create a database, create and apply migrations, install the necessary packages from the requirements.txt file and populate the .env file with .env.example. To run, use the command "python manage.py runserver".
+Before running the web application, create a database, create and apply migrations, install the necessary packages from the requirements.txt file and populate the .env file with .env.example. To run, use the command "python manage.py runserver". Requests are sent via Postman in JSON format.
 
 
 ## Docker 
@@ -18,6 +18,7 @@ Create Docker images and containers using commands: "docker-compose build" and "
 
 config/
 
+    celery.py - celery file
     settings.py - application settings
     urls.py - routing file
 
@@ -29,12 +30,13 @@ keep_secrets/
     models.py - application models
     serializers.py - application serializers
     services.py - service functions
+    tasks.py = periodic task
     tests.py - application tests
     urls.py - application routing file
     views.py - controllers
 
+env.example - example of filling environment variables.
 manage.py - web application entry point.
-
 requirements.txt - list of requirements for the project.
 
 <!-- LICENSE -->
