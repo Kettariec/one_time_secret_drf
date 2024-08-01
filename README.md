@@ -35,8 +35,15 @@ keep_secrets/
     urls.py - application routing file
     views.py - controllers
 
+.gitignore - Git file.
+
+Dockerfile
+docker-compose.yaml - Docker files.
+
 env.example - example of filling environment variables.
+
 manage.py - web application entry point.
+
 requirements.txt - list of requirements for the project.
 
 <!-- LICENSE -->
