@@ -37,7 +37,7 @@ keep_secrets/
 
 .gitignore - Git file.
 
-Dockerfile
+Dockerfile <br>
 docker-compose.yaml - Docker files.
 
 env.example - example of filling environment variables.
