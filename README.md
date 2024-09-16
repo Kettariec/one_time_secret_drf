@@ -46,15 +46,10 @@ manage.py - web application entry point.
 
 requirements.txt - list of requirements for the project.
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 
 <!-- CONTACT -->
 ## Contact
 
 kettariec@gmail.com
 
-https://github.com/Kettariec/one_time_secret_drf
+https://github.com/Kettariec/onetimesecret_drf
